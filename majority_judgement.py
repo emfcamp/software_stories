@@ -48,7 +48,7 @@ def get_floor_median(values):
         return values[0]
     elif len(values) == 0:
         raise Exception('Cannot find median of empty list')
-    median_index = int(len(values)//2)
+    median_index = int((len(values) - 0.5) // 2)
     return values[median_index]
 
 
