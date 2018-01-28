@@ -1,16 +1,24 @@
 # Volunteer system
 
-## Roles
+## User types
+
 * Volunteer - People on the ground helping
-* Manager - Check volunteers arrive for shifts, carry out training
+* Trainer - Someone able to sign off volunteers as having received training for a specific role
+* Manager - Check volunteers arrive for shifts, provide aid
 * Admin - Create shifts/roles etc.
 
 ## Shift types
-**NB:** not the same as roles. Roles are e.g. "bar", "A/V". Types are e.g. "training", "free"
+Not the same as roles. Roles are e.g. "bar", "A/V" shifts are the specific combination of time, place & role.
 
+* Normal - A time period, at a location where a role to be filled.
 * Training - Special shift that the volunteer must complete before being allowed to do other shifts of that type (e.g. bar training)
-* Free shift - The volunteer indicates that they are happy to be assigned any shift they are trained to do for that period
-* Cover - (not really a shift) the volunteer indicates that they are happy to be contacted to fill required shifts (not the same as free as cover could be at any time during the weekend).
+
+
+## Availability
+Allow volunteers to indicate that they don't mind the specific role they perform.
+
+* Free shift - The volunteer indicates that they are happy to be assigned any (normal) shift they are trained to do.
+* Cover - the volunteer indicates that they are happy to be contacted to fill required shifts if need be.
 
 As a volunteer I would like to:
 -------------------------------
@@ -24,22 +32,24 @@ As a volunteer I would like to:
     - That don't clash with items in the schedule I've starred
 * Sign up for:
     - A specific shift I have been trained for
-    - A shift I have not been trained for:
-        + ONLY if I can receive training before the shift starts ()
-        +  
-    - A free shift: any shift I am able to (i.e. be assigned a shift as needed)
     - A training session
-* Sign up to be trained for a role
+    - A shift I have not been trained for:
+        + ONLY if I can receive training before the shift starts 
+* Indicate availability
+    - For a free shift (whole shifts only?)
+    - For cover (possibly allow partial shifts?)
 * Be notified
-    - By:
-        + Email
-        + SMS
-        + Push notification (from web app or native app)
     - About:
         + My upcoming shifts
         + Changes to my shift
         + Shifts that need covering
-        + The type of shift I have been assigned (if I signed up as 'free')
+        + Details of shift I have been assigned (if I signed up as 'free')
+            * Ideally 15 min before the shift starts
+    - By:
+        + Email
+        + SMS
+        + Notification page on site
+        + Push notification (from web app or native app)
 * Be able to change my notification settings
 * Be able to communicate with managers and/or an admin
 * Provide extra information
@@ -54,6 +64,12 @@ As a volunteer I would like to:
     - And be alerted if doing so will flag me as a no-show for that shift (i.e. if I try to change a shift within 15 min of its start)
 
 
+As a trainer I would like to:
+-----------------------------
+* Approve a volunteer as trained for a role
+* Sign up to train a training session (?)
+
+
 As a manager I would like to:
 -----------------------------
 * Assign free volunteers to shifts
@@ -65,7 +81,6 @@ As a manager I would like to:
     - A role
     - All roles
 * View all volunteers that have signed up for a session
-* Approve a volunteer as trained for a role
 * Contact:
     - All volunteers
     - All volunteers with certain training
