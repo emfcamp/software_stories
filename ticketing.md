@@ -15,7 +15,7 @@ As an attendee I can
 * Use voucher codes to
  * apply discounts on items they are applicable to (eg. for speaker tickets)
  * reveal items only available with that code (eg. setup/teardown tickets, tents)
-* Transfer any item to another email address
+* Transfer any item to another email address (I cannot undo this)
 * Login and see the items I have bought
 * Request cancellation of items
 * Print my tickets at any time
@@ -24,6 +24,12 @@ As an attendee I can
 * Expect to recieve an email about my ticket and further information closer to the event regardless of who bought the ticket
 * See arbitrary text that has been attached to my ticket types
 * Use my ticket on site to redeem the items I have attached to my email address
+
+As someone who has been transferred an item I
+--------------------------------
+* Must agree with the Terms and Conditions in order to accept the item
+* Know that I have sole control over the item
+* Can also transfer the item
 
 
 As someone selling tickets I can
