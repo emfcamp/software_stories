@@ -56,6 +56,7 @@ As someone selling tickets I can
  * all attendees
  * just attendees with a specific item purchased
 * Have a reliable analogue fallback
+* Create an invoice
 
 As someone who is checking people's tickets
 -------------------------------------------
