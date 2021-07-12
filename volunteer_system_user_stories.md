@@ -16,6 +16,7 @@ Not the same as roles. Roles are e.g. "bar", "A/V" shifts are the specific combi
 * Training - Special shift that the volunteer must complete before being allowed to do other shifts of that type (e.g. bar training)
 
 > I don't think we've run training sessions scheduled via system, do we want this? I don't think there is a 
+>> JW: Pretty sure this never got used except for the bar.
 
 ## Availability
 Allow volunteers to indicate that they don't mind the specific role they perform.
@@ -27,6 +28,9 @@ Allow volunteers to indicate that they don't mind the specific role they perform
 > * provide cover where other shifts are short
 > * Do one off tasks
 > * Do recurring tasks/checks
+
+>> JW: I think a runner role is a good thing to have, but isn't the same as allowing people to express that they're
+>> happy to volunteer for [insert list of roles] and don't have strong opinions as to when or where they do that.
 
 As a volunteer I would like to:
 -------------------------------
@@ -40,6 +44,8 @@ As a volunteer I would like to:
     - That I have signed up to
     - That don't clash with items in the schedule I've starred
   > `/volunteer/schedule?day=sat` `apps/volunteer/schedule.py` 
+  >> JW: Probably role/signed up shifts/schedule are the only filters that actually matter. "Needed now" might be nice
+  >> if people find themselves available and willing to fill a shift.
   
   > Currently hardcoded Fri/Sat/Sun/Mon, which is active (when not in URL arg) is from current day of the week, could possibly do with a check for date being during event for that?
   
@@ -52,6 +58,8 @@ As a volunteer I would like to:
   > Possibly a lot of this is from JS not running? https://github.com/emfcamp/Website/issues/868#issuecomment-586746500
   
   > Would be nice to have schedule show shifts you're signed up for - currently "Sign Up" button would become a "Cancel" button, is that enough?
+  >> JW: I think this already exists.
+  
 * Sign up for:
     - A specific shift I have been trained for
     - A training session
@@ -84,6 +92,7 @@ As a volunteer I would like to:
 * Provide extra information
     - Phone number
     > Phone number is currently required to sign up as a volunteer (though there is no check that the number given is real). I'd like to remove that requirement. I'm thinking email address as only required contact details and optional fields for phone number (for public and eventphone system), IRC nick or other contact details. 
+    >> JW: +1 to a more freeform "how to contact me" field unless we actually do SMS notifications
     - Age
     - Misc details (e.g. experience)
 * When on shift
@@ -93,6 +102,8 @@ As a volunteer I would like to:
     > I don't think we have anything for these at the moment. I'm not sure about putting first two in system - rather they are just "contact volunteer desk"
     
     > Info about the role is something I'd like to improve. Previously a lot of the what you're actually doing on a shift was passed from volunteer to volunteer in a pretty ad hoc way. I'd like to get complete instructions in the system, and have some way to add/change that as we figure out more during the event. Possibly just have wiki page for instructions for each role? Allow anyone to edit them? Can have volunteer manager(s) watching the pages so they get emails on changes and can revert anything that's obviously wrong/vandalism. 
+    >> JW: Role details are currently baked in as static files - definitely better to be able to link to a wiki page which people can edit over time to 
+    >> provide more detail on what's involved.
     
 * Change a shift
     - And be alerted if doing so will flag me as a no-show for that shift (i.e. if I try to change a shift within 15 min of its start)
@@ -113,6 +124,8 @@ As a trainer I would like to:
 
 > I think tracking training in volunteer system was only done for bar previously and it was auto ticked when they completed questions so this UI was never actually used. Is it going to be needed this time or are we likely to only need training for bar and it'll auto mark people as trained?
 
+>> JW: +1 - I doubt this would be used in practice.
+
 As a manager I would like to:
 -----------------------------
 
@@ -122,11 +135,18 @@ As a manager I would like to:
 * Change who's on a shift (with and without flagging them as a no-show)
 * Edit shift info
 * Mark whether a volunteer attended their shift
+
+> JW: I don't see this getting used in practice, presumably it would be team leads responsible for
+> updating this, and they've already got enough to do without also ticking boxes to say whether people
+> turned up. What would happen if someone doesn't turn up?
+
 * Respond to questions/concerns of volunteers
 * Ban a volunteer (and record a reason) from
     - A role
     - All roles
   > We have a `Banned` boolean attached to a user but no provision for giving a reason, or it being only for some roles. Not sure if that is checked anywhere?
+  >> JW: I'm not at all clear what the use case is for banning a volunteer - if someone has done something heinous enough to get banned from volunteering
+  >> they should probably just be asked to leave.
   
 * View all volunteers that have signed up for a session
 * Contact:
@@ -144,11 +164,15 @@ As a manager I would like to:
   
   > Isn't limited to users who've checked `allow_comms_during_event`?
 
+  >> JW: Again, not sure what the use case is in practice - maybe others are different, but if you need to get time sensitive information to me email
+  >> isn't the way to do it. This needs to go via a more immediate channel to be useful.
+
 * View which volunteers are currently in which shifts
   > I think this will be  visible on `volunteer/shift/<id>`. Page has a "These people are on this shift" bit. But getting to there is only possible from schedule? 
 * View which current shifts require volunteers
 * View which upcoming shifts require volunteers
   > `volunteer/schedule` shows count of signed up over needed. 
+  >> JW: The volunteer schedule overview for managers could do with a ton of work on it's UI to make it useful.
 
 
 As an admin I would like to:
