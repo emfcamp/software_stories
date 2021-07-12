@@ -23,10 +23,10 @@ Allow volunteers to indicate that they don't mind the specific role they perform
 * Free shift - The volunteer indicates that they are happy to be assigned any (normal) shift they are trained to do.
 * Cover - the volunteer indicates that they are happy to be contacted to fill required shifts if need be.
 
-> Thinking to cover this with new role giving pool of people to 
+> Thinking to cover this with new role (runner?) giving pool of people to 
 > * provide cover where other shifts are short
 > * Do one off tasks
-> * Cover recurring tasks/checks
+> * Do recurring tasks/checks
 
 As a volunteer I would like to:
 -------------------------------
@@ -41,7 +41,7 @@ As a volunteer I would like to:
     - That don't clash with items in the schedule I've starred
   > `/volunteer/schedule?day=sat` `apps/volunteer/schedule.py` 
   
-  > Currently hardcoded Fri/Sat/Sun/Mon
+  > Currently hardcoded Fri/Sat/Sun/Mon, which is active (when not in URL arg) is from current day of the week, could possibly do with a check for date being during event for that?
   
   > Don't have filters? There is a `filter-panel` in the template should some js be populating it?
   
@@ -58,6 +58,7 @@ As a volunteer I would like to:
     - A shift I have not been trained for:
         + ONLY if I can receive training before the shift starts
     > Signup is broken -> CSRF not right for the form? https://github.com/emfcamp/Website/issues/868
+
     > Only training check has hardcoded `if role == Bar`, and doesn't allow sign up till training is done
 * Indicate availability
     - For a free shift (whole shifts only?)
@@ -75,7 +76,9 @@ As a volunteer I would like to:
         + SMS
         + Notification page on site
         + Push notification (from web app or native app)
-    > I don't think there are any automatic notifications? Manually sent emails discussed below in manager section. Do we want automatic notifications? Would need to properly flesh out opting in for them in sign up flow. 
+    > I don't think there are any automatic notifications? Manually sent emails discussed below in manager section. 
+    
+    > Do we want automatic notifications? Would need to properly flesh out opting in for them in sign up flow, opting out later etc. 
 * Be able to change my notification settings
 * Be able to communicate with managers and/or an admin
 * Provide extra information
@@ -88,9 +91,12 @@ As a volunteer I would like to:
     - Request help at any time
     - Have access to information about the role
     > I don't think we have anything for these at the moment. I'm not sure about putting first two in system - rather they are just "contact volunteer desk"
+    
+    > Info about the role is something I'd like to improve. Previously a lot of the what you're actually doing on a shift was passed from volunteer to volunteer in a pretty ad hoc way. I'd like to get complete instructions in the system, and have some way to add/change that as we figure out more during the event. Possibly just have wiki page for instructions for each role? Allow anyone to edit them? Can have volunteer manager(s) watching the pages so they get emails on changes and can revert anything that's obviously wrong/vandalism. 
+    
 * Change a shift
     - And be alerted if doing so will flag me as a no-show for that shift (i.e. if I try to change a shift within 15 min of its start)
-  > Looks like there is processing to cancel doing a shift (button on sign up page toggles if you're signed up for the shift or not) but nothing to check time is far enough before start. 
+  > Looks like there is processing to cancel doing a shift (button on sign up page toggles if you're signed up for the shift or not) but nothing to check time is far enough before start. I'd like some kind of notification to volunteer manager if shift is cancelled "close" to start. 
 
 > Currently default page for `/volunteer/` (what's linked from main site nav bar) is `/volunteer/account` probably better to make that be `/volunteer/schedule` after they've signed up. Can change that in `sign_up.py` L77 change to `redirect(url_for(".schedule"))` Do we want something else here for before the event? Are we going to allow signing up to volunteer system (and shifts) before event? I'm inclined towards: yes allowing people to sign up. 
 
@@ -100,10 +106,12 @@ As a trainer I would like to:
 * Sign up to train a training session (?)
 
 > Marking people as trained is handled in `apps/volunteer/training.py` 
+
 > Requires volunteer admin privileges
+
 > Is pretty clunky - just shows list of all volunteers who're interested in role with checkbox for trained. 
 
-> I think tracking training in volunteer system was only done for bar previously and it was auto ticked when they completed questions so this UI was never actually used. Is it going to be needed?
+> I think tracking training in volunteer system was only done for bar previously and it was auto ticked when they completed questions so this UI was never actually used. Is it going to be needed this time or are we likely to only need training for bar and it'll auto mark people as trained?
 
 As a manager I would like to:
 -----------------------------
@@ -118,7 +126,8 @@ As a manager I would like to:
 * Ban a volunteer (and record a reason) from
     - A role
     - All roles
-  > We have a `Banned` boolean attached to a user but no provision for giving a reason, or it being only for some roles. Is this checked anywhere?
+  > We have a `Banned` boolean attached to a user but no provision for giving a reason, or it being only for some roles. Not sure if that is checked anywhere?
+  
 * View all volunteers that have signed up for a session
 * Contact:
     - All volunteers
@@ -129,12 +138,14 @@ As a manager I would like to:
     
   > Currently broken with `notification/base.html` using `{% assets %}`. I've commented that out to be able to poke at it (without CSS) but need to fix it properly. Related: https://github.com/emfcamp/Website/issues/869
     
-  > Currently only offers option to email all users interested in a role. Would really like 
+  > Currently only offers option to email all users interested in a role. Would really like to be able to send message to a subset of them (with some shuffling/tracking so it isn't always the same subset). Can then figure out how many people we should be mailing for the number we need to get. 
+  
+  > Would like to be able to email all volunteers signed up for particular shift(s) if there are changes or other info we need to ping them. 
   
   > Isn't limited to users who've checked `allow_comms_during_event`?
 
 * View which volunteers are currently in which shifts
-  > I think this will be  visible on `volunteer/shift/<id>`. Page has a "These people are on this shift" bit. But getting to there is only possible from schedule?
+  > I think this will be  visible on `volunteer/shift/<id>`. Page has a "These people are on this shift" bit. But getting to there is only possible from schedule? 
 * View which current shifts require volunteers
 * View which upcoming shifts require volunteers
   > `volunteer/schedule` shows count of signed up over needed. 
