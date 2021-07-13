@@ -56,7 +56,9 @@ As a Volunteer Admin I would like to:
     - Any other notes
 * Create/Delete/Edit shifts
     - By:
-        + Importing details (e.g. from frab, json)
+        + Importing details from 
+            * Main schedule
+            * json file
         + Defining parameters
             * Time of the first shift
             * Shift duration
