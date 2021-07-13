@@ -15,7 +15,7 @@ Not the same as roles. Roles are e.g. "bar", "A/V" shifts are the specific combi
 * Normal - A time period, at a location where a role to be filled.
 * Training - Special shift that the volunteer must complete before being allowed to do other shifts of that type (e.g. bar training)
 
-> I don't think we've run training sessions scheduled via system, do we want this? I don't think there is a 
+> I don't think we've run training sessions scheduled via system, do we want this? I don't think there is much need for this. If it is needed could handle it in current system with a new "X training" role that we can create shifts for.
 
 ## Availability
 Allow volunteers to indicate that they don't mind the specific role they perform.
@@ -98,7 +98,7 @@ As a volunteer I would like to:
     - And be alerted if doing so will flag me as a no-show for that shift (i.e. if I try to change a shift within 15 min of its start)
   > Looks like there is processing to cancel doing a shift (button on sign up page toggles if you're signed up for the shift or not) but nothing to check time is far enough before start. I'd like some kind of notification to volunteer manager if shift is cancelled "close" to start. 
 
-> Currently default page for `/volunteer/` (what's linked from main site nav bar) is `/volunteer/account` probably better to make that be `/volunteer/schedule` after they've signed up. Can change that in `sign_up.py` L77 change to `redirect(url_for(".schedule"))` Do we want something else here for before the event? Are we going to allow signing up to volunteer system (and shifts) before event? I'm inclined towards: yes allowing people to sign up. 
+> Currently default page for `/volunteer/` (what's linked from main site nav bar) is `/volunteer/account` probably better to make that be `/volunteer/schedule` after they've signed up. Can change that in `sign_up.py` L77 change to `redirect(url_for(".schedule"))` Do we want something else here for before the event? Are we going to allow signing up to volunteer system (and shifts) before event? I'm inclined towards: yes allowing people to sign up and schedule always as default (means getting schedule populated before we start taking volunteer sign ups - if we don't have that then new page with roles and training would be better than account?). 
 
 As a trainer I would like to:
 -----------------------------
