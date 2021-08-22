@@ -140,11 +140,10 @@ It would be nice to have:
 * Alerts
     - Option for volunteer to get reminder of shift they're signed up for N minutes before it starts
     - Via email, SMS, IRC, push notifications from website
-* Admin Alerts
-  Notification (to IRC or a webpage we can watch) for:
-      - Volunteer removing signup for a shift withing 15(?) minutes of the shift starting
-      - Changes to role instruction wiki pages
-      - If runner task is still TODO N minutes after scheduled time
+* Admin Alerts (to IRC or a webpage we can watch) for:
+    - Volunteer removing signup for a shift withing 15(?) minutes of the shift starting
+    - Changes to role instruction wiki pages
+    - If runner task is still TODO N minutes after scheduled time
 * APIs for:
     - Individual's alerts
     - General alerts
