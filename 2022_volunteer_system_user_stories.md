@@ -7,11 +7,6 @@
 
 > Might bring back Role Admin user type if we find any uses for it.  
 
-
-## Availability
-
-Allow volunteers to indicate that they are happy to be contacted (possibly restricted to certain times) to cover shifts where we are short of people.
-
 As a volunteer I would like to:
 -------------------------------
 * Sign up to be a volunteer
