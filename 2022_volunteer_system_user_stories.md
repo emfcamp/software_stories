@@ -15,16 +15,16 @@ Allow volunteers to indicate that they are happy to be contacted (possibly restr
 As a volunteer I would like to:
 -------------------------------
 * Sign up to be a volunteer
-  Providing:
+    - Providing:
       - email address
       - over 18 or not
-  Optionally providing:
+    - Optionally providing:
       - other contact details
-  Pick which roles I'm interested in doing 
-  Indicate availability to be contacted to cover shifts
-    - Never
-    - At any time during event
-    - In specified time windows
+    - Pick which roles I'm interested in doing 
+    - Indicate availability to be contacted to cover shifts
+      - Never
+      - At any time during event
+      - In specified time windows
 * View all roles
     - Change which I'm interested in doing 
 * View all shifts and filter by:
