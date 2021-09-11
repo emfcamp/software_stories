@@ -76,7 +76,7 @@
             * Whether to repeat for all 3 days (e.g. bar will have different opening hours based on day)
 * Have the opportunity to preview any created shifts or changes made to shifts before confirming them (especially for importing or creating from parameters).
 
-### During the event:
+### During the event
 
 * Sign a volunteer up for a shift (either if they have already signed up to volunteer system
 * Remove a volunteer from being signed up for a shift
@@ -95,14 +95,14 @@
 
 ## As someone being helped by volunteers I would like to:
 
-### Before the event:
+### Before the event
 * Provide volunteer manager(s) with details of 
     - Role(s)
     - Venue(s)
     - Shifts
     - Recurring runner tasks
     
-### During the event:
+### During the event
 * Have volunteers turn up for the specified shifts
 * Give those volunteers food tokens when they complete a shift
   > If there isn't going to be someone "supervising" volunteers: let volunteer admin know and we can check in on them and give them food tokens. 
@@ -129,14 +129,14 @@ Will be done by Volunteer Admin - for people wanting a task done: ping details t
     - For recurring tasks want to support cancelling one instance or all future instances
 * Postpone a task 
 
-### Performing tasks (done by runners):
+### Performing tasks (done by runners)
 * View list of tasks to do ordered by time
 * Mark a task as in progress
 * Mark a task as done
 
 > Can manage this on paper if we don't have time to make web version
 
-## It would be nice to have:
+## It would be nice to have
 * Schedule integration
 * Alerts
     - Option for volunteer to get reminder of shift they're signed up for N minutes before it starts
