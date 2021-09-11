@@ -7,8 +7,7 @@
 
 > Might bring back Role Admin user type if we find any uses for it.  
 
-As a volunteer I would like to:
--------------------------------
+## As a volunteer I would like to:
 * Sign up to be a volunteer
     - Providing:
       - email address
@@ -38,10 +37,10 @@ As a volunteer I would like to:
     - Have access to information about the role (wiki page)
     - Update information about the role (edit wiki page)
 
-As a Volunteer Admin I would like to:
-----------------------------
+## As a Volunteer Admin I would like to:
 
-*Before the event:*
+### Before the event
+
 * Create roles with
     - Name
     - Short description
@@ -54,27 +53,32 @@ As a Volunteer Admin I would like to:
     - A name
     - A location
     - Any other notes
+      > Probably do want to add field for this in DB
 * Create/Delete/Edit shifts
-    - By:
-        + Importing details from 
-            * Main schedule
-            * json file
-        + Defining parameters
-            * Time of the first shift
-            * Shift duration
-            * Number of shifts
-            * Whether to repeat for all 3 days (e.g. bar will have different opening hours based on day)
-        + Individually
     - With:
         + A role (e.g. 'A/V')
         + A venue (e.g. 'Stage A')
         + Start time
-        + A hand-over period (a shift should probably start 15min before the previous shift is supposed to end to allow proper handover of information and so we have time to find replacements for no-shows)
-        + A description box (to include links on 'how-to' as well as useful numbers etc.)
-* Have the opportunity to preview any changes made to shifts before confirming them.
+        + End time
+        + Minimum number needed
+        + Maximum number needed
+    - By:
+        + Manually entering details
+        + Importing details from 
+            * Main schedule
+              > For any shifts tied to something from the schedule
+            * json file
+              > Will let us have external tools to build lists of shifts
+        + Create multiple shifts by defining parameters
+            * Time of the first shift
+            * Shift duration
+            * Number of shifts
+            * Whether to repeat for all 3 days (e.g. bar will have different opening hours based on day)
+* Have the opportunity to preview any created shifts or changes made to shifts before confirming them (especially for importing or creating from parameters).
 
-*During the event:*
-* Sign a volunteer up for a shift
+### During the event:
+
+* Sign a volunteer up for a shift (either if they have already signed up to volunteer system
 * Remove a volunteer from being signed up for a shift
 * Edit shift info
 * Ban a volunteer (and record a reason) from signing up for shifts
@@ -89,28 +93,29 @@ As a Volunteer Admin I would like to:
 * View which upcoming shifts require volunteers
 * View which current shifts are "unsupervised"
 
-As someone being helped by volunteers I would like to:
--------------------------
+## As someone being helped by volunteers I would like to:
 
-*Before the event:*
+### Before the event:
 * Provide volunteer manager(s) with details of 
     - Role(s)
     - Venue(s)
     - Shifts
     - Recurring runner tasks
     
-*During the event:*
+### During the event:
 * Have volunteers turn up for the specified shifts
 * Give those volunteers food tokens when they complete a shift
   > If there isn't going to be someone "supervising" volunteers: let volunteer admin know and we can check in on them and give them food tokens. 
 * Get help from runners for ad-hoc tasks
 
-Runner task system
--------------------------
+## Runner task system
 
 We are going to have a pool of runners to cover smaller tasks don't need someone dedicated to them for the couple of hours of a normal shift. 
 
-*Entering tasks (done by Volunteer Admin):*
+### Entering tasks 
+
+Will be done by Volunteer Admin - for people wanting a task done: ping details to volunteer desk and they'll put it in the system to get someone to do it):
+
 * Create recurring task with:
     - Name
     - Description
@@ -124,21 +129,20 @@ We are going to have a pool of runners to cover smaller tasks don't need someone
     - For recurring tasks want to support cancelling one instance or all future instances
 * Postpone a task 
 
-*Performing tasks (done by runners):*
+### Performing tasks (done by runners):
 * View list of tasks to do ordered by time
 * Mark a task as in progress
 * Mark a task as done
 
 > Can manage this on paper if we don't have time to make web version
 
-It would be nice to have:
--------------------------
+## It would be nice to have:
 * Schedule integration
 * Alerts
     - Option for volunteer to get reminder of shift they're signed up for N minutes before it starts
     - Via email, SMS, IRC, push notifications from website
 * Admin Alerts (to IRC or a webpage we can watch) for:
-    - Volunteer removing signup for a shift withing 15(?) minutes of the shift starting
+    - Volunteer removing signup for a shift within 15(?) minutes of the shift starting
     - Changes to role instruction wiki pages
     - If runner task is still TODO N minutes after scheduled time
 * APIs for:
