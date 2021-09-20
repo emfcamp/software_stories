@@ -7,32 +7,40 @@
 
 > Might bring back Role Admin user type if we find any uses for it.  
 
+* Unsupervised - Volunteer team are looking after this role rather than another team
+
 ## As a volunteer I would like to:
+
 * Sign up to be a volunteer
     - Providing:
       - email address
       - over 18 or not
     - Optionally providing:
-      - other contact details
-    - Pick which roles I'm interested in doing 
+      - other contact details - key/value table for arbitrary contact types
+    - Pick which roles I'm interested in doing  - new feature/improvement?
     - Indicate availability to be contacted to cover shifts
       - Never
       - At any time during event
-      - In specified time windows
+      - In specified time windows - new feature
+
 * View all roles
     - Change which I'm interested in doing 
-* View all shifts and filter by:
+
+* View all shifts and filter by (schedule view):
     - Role
     - Location
     - Shifts I can do (I have the training and pass the requirements)
     - Time
     - That I have signed up to
+
 * Sign up for:
     - A specific shift 
-* View list of shifts I'm signed up for
-* Cancel a shift
+
+* View list of shifts I'm signed up for - link to schedule view search
+* Cancel a shift - improve
 * Take online training/test
     > Currently expect this to be only for the bar
+
 * When on shift
     - Have access to information about the role (wiki page)
     - Update information about the role (edit wiki page)
@@ -48,12 +56,14 @@
     - Any requirements 
         - Must be over 18
         - Requires training
-    - If they'll be "supervised" during shift or not
+    - If they'll be "unsupervised" during shift or not
+
 * Create venues with
     - A name
     - A location
     - Any other notes
       > Probably do want to add field for this in DB
+
 * Create/Delete/Edit shifts
     - With:
         + A role (e.g. 'A/V')
@@ -69,15 +79,18 @@
               > For any shifts tied to something from the schedule
             * json file
               > Will let us have external tools to build lists of shifts
+            * shift creation tool currently exists as a Python script with no web UI
         + Create multiple shifts by defining parameters
             * Time of the first shift
             * Shift duration
             * Number of shifts
             * Whether to repeat for all 3 days (e.g. bar will have different opening hours based on day)
-* Have the opportunity to preview any created shifts or changes made to shifts before confirming them (especially for importing or creating from parameters).
+
+* Have the opportunity to preview any created shifts or changes made to shifts before confirming them (especially for importing or creating from parameters). - new feature
 
 ### During the event
 
+* Sign a volunteer up (add new volunteer record) - new feature
 * Sign a volunteer up for a shift (either if they have already signed up to volunteer system
 * Remove a volunteer from being signed up for a shift
 * Edit shift info
@@ -88,10 +101,10 @@
     - All volunteers with certain training
     - All volunteers who have indicated that they may be contacted for cover now 
     - Volunteers signed up to particular shift(s)
-* View which volunteers are currently in which shifts
-* View which current shifts require volunteers
-* View which upcoming shifts require volunteers
-* View which current shifts are "unsupervised"
+* View which volunteers are currently in which shifts - schedule view
+* View which current shifts require volunteers - schedule view
+* View which upcoming shifts require volunteers - schedule view
+* View which current shifts are "unsupervised" - schedule view
 
 ## As someone being helped by volunteers I would like to:
 
@@ -105,7 +118,7 @@
 ### During the event
 * Have volunteers turn up for the specified shifts
 * Give those volunteers food tokens when they complete a shift
-  > If there isn't going to be someone "supervising" volunteers: let volunteer admin know and we can check in on them and give them food tokens. 
+  > If someone is "unsupervised": let volunteer admin know and we can check in on them and give them food tokens.
 * Get help from runners for ad-hoc tasks
 
 ## Runner task system
@@ -140,10 +153,11 @@ Will be done by Volunteer Admin - for people wanting a task done: ping details t
 * Schedule integration
 * Alerts
     - Option for volunteer to get reminder of shift they're signed up for N minutes before it starts
-    - Via email, SMS, IRC, push notifications from website
+    - Via email, IRC, push notifications from website
+    - See other contact details (key/value table for arbitrary information)
 * Admin Alerts (to IRC or a webpage we can watch) for:
     - Volunteer removing signup for a shift within 15(?) minutes of the shift starting
-    - Changes to role instruction wiki pages
+    - Changes to role instruction wiki pages (watches on pages in Mediawiki, ideally pass to an IRC bot)
     - If runner task is still TODO N minutes after scheduled time
 * APIs for:
     - Individual's alerts
