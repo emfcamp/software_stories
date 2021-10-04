@@ -5,9 +5,7 @@
 * Volunteer - People on the ground helping
 * Volunteer Admin - Create shifts/roles etc.
 
-> Might bring back Role Admin user type if we find any uses for it.  
-
-* Unsupervised - Volunteer team are looking after this role rather than another team
+> Might bring back Role Admin user type if we find we need it (managing training, contacting volunteers, ...).  
 
 ## As a volunteer I would like to:
 
@@ -57,6 +55,7 @@
         - Must be over 18
         - Requires training
     - If they'll be "unsupervised" during shift or not
+      * Unsupervised - Volunteer team are looking after this role rather than another team
 
 * Create venues with
     - A name
