@@ -15,11 +15,11 @@
       - over 18 or not
     - Optionally providing:
       - other contact details - key/value table for arbitrary contact types
-    - Pick which roles I'm interested in doing  - new feature/improvement?
+    - Pick which roles I'm interested in doing
     - Indicate availability to be contacted to cover shifts
       - Never
       - At any time during event
-      - In specified time windows - new feature
+      - In specified time windows
 
 * View all roles
     - Change which I'm interested in doing 
@@ -29,15 +29,15 @@
     - Location
     - Shifts I can do (I have the training and pass the requirements)
     - Time
-    - That I have signed up to
+    - That I have signed up to do
 
 * Sign up for:
     - A specific shift 
 
-* View list of shifts I'm signed up for - link to schedule view search
-* Cancel a shift - improve
+* View list of shifts I'm signed up for 
+* Cancel a shift
 * Take online training/test
-    > Currently expect this to be only for the bar
+    > Currently expect this to be only be for the bar
 
 * When on shift
     - Have access to information about the role (wiki page)
@@ -55,13 +55,12 @@
         - Must be over 18
         - Requires training
     - If they'll be "unsupervised" during shift or not
-      * Unsupervised - Volunteer team are looking after this role rather than another team
+      * Unsupervised means volunteer team are looking after this role
+        rather than another team
 
 * Create venues with
     - A name
     - A location
-    - Any other notes
-      > Probably do want to add field for this in DB
 
 * Create/Delete/Edit shifts
     - With:
@@ -78,32 +77,36 @@
               > For any shifts tied to something from the schedule
             * json file
               > Will let us have external tools to build lists of shifts
-            * shift creation tool currently exists as a Python script with no web UI
         + Create multiple shifts by defining parameters
             * Time of the first shift
             * Shift duration
             * Number of shifts
-            * Whether to repeat for all 3 days (e.g. bar will have different opening hours based on day)
-
-* Have the opportunity to preview any created shifts or changes made to shifts before confirming them (especially for importing or creating from parameters). - new feature
+            * Whether to repeat for all 3 days (e.g. bar will have
+              different opening hours based on day)
+    - Have the opportunity to preview any created shifts or changes
+      made to shifts before confirming them (especially for importing
+      or creating from parameters). - new feature
 
 ### During the event
 
 * Sign a volunteer up (add new volunteer record) - new feature
-* Sign a volunteer up for a shift (either if they have already signed up to volunteer system
+* Sign a volunteer up for a shift (either if they have already signed
+  up to volunteer system
 * Remove a volunteer from being signed up for a shift
 * Edit shift info
 * Ban a volunteer (and record a reason) from signing up for shifts
 * View all volunteers that have signed up for a shift
 * Contact:
     - All volunteers
-    - All volunteers with certain training
-    - All volunteers who have indicated that they may be contacted for cover now 
+    - Volunteers with certain training
+    - Volunteers who have indicated that they may be contacted for
+      cover now
     - Volunteers signed up to particular shift(s)
-* View which volunteers are currently in which shifts - schedule view
-* View which current shifts require volunteers - schedule view
-* View which upcoming shifts require volunteers - schedule view
-* View which current shifts are "unsupervised" - schedule view
+    - Combinations of the above
+* View which volunteers are currently in which shifts
+* View which current shifts require volunteers 
+* View which upcoming shifts require volunteers
+* View which current shifts are "unsupervised"
 
 ## As someone being helped by volunteers I would like to:
 
@@ -131,6 +134,8 @@
 
 We are going to have a pool of runners to cover smaller tasks don't need someone dedicated to them for the couple of hours of a normal shift. 
 
+> Can manage this on paper if we don't have time to make web version
+
 ### Entering tasks 
 
 Will be done by Volunteer Admin - for people wanting a task done: ping details to volunteer desk and they'll put it in the system to get someone to do it):
@@ -152,8 +157,6 @@ Will be done by Volunteer Admin - for people wanting a task done: ping details t
 * View list of tasks to do ordered by time
 * Mark a task as in progress
 * Mark a task as done
-
-> Can manage this on paper if we don't have time to make web version
 
 ## It would be nice to have
 * Schedule integration
