@@ -4,8 +4,7 @@
 
 * Volunteer - People on the ground helping
 * Volunteer Admin - Create shifts/roles etc.
-
-> Might bring back Role Admin user type if we find we need it (managing training, contacting volunteers, ...).  
+* Role Admin - Will be managing volunteers for a particular role
 
 ## As a volunteer I would like to:
 
@@ -37,7 +36,7 @@
 * View list of shifts I'm signed up for 
 * Cancel a shift
 * Take online training/test
-    > Currently expect this to be only be for the bar
+    > Currently expect this to only be for the bar
 
 * When on shift
     - Have access to information about the role (wiki page)
@@ -81,7 +80,7 @@
             * Time of the first shift
             * Shift duration
             * Number of shifts
-            * Whether to repeat for all 3 days (e.g. bar will have
+            * Whether to repeat for all days (e.g. bar could have
               different opening hours based on day)
     - Have the opportunity to preview any created shifts or changes
       made to shifts before confirming them (especially for importing
@@ -129,6 +128,18 @@
 * Have volunteers turn up for the specified shifts
 * Give those volunteers food tokens when they complete a shift (if you're "supervising" them)
 * Get help from runners for ad-hoc tasks
+
+Other things that could be useful (but can be ignored by anyone who doesn't find them useful):
+* View list of volunteers signed up for a shift
+   - Including:
+     + If they've previously completed a shift for this role.
+     + If they've been marked as arrived yet
+     + Filters for above being true/false or combinations
+* Mark a volunteer as having arrived to work a shift
+* Mark a volunteer as having completed or abandoned a shift (handing 
+out a food token as appropriate)
+
+> Example use case for this is the bar. They have some practical training to give at the start of a volunteers first shift so want a way to track/see who is on their first bar shift for a particular shift to know how many people they need to do training for and to track when they've all arrived.  
 
 ## Runner task system
 
