@@ -3,125 +3,184 @@
 ## User types
 
 * Volunteer - People on the ground helping
-* Trainer - Someone able to sign off volunteers as having received training for a specific role
-* Manager - Check volunteers arrive for shifts, provide aid
-* Admin - Create shifts/roles etc.
+* Volunteer Admin - Create shifts/roles etc.
+* Role Admin - Will be managing volunteers for a particular role
 
-## Shift types
-Not the same as roles. Roles are e.g. "bar", "A/V" shifts are the specific combination of time, place & role.
+## As a volunteer I would like to:
 
-* Normal - A time period, at a location where a role to be filled.
-* Training - Special shift that the volunteer must complete before being allowed to do other shifts of that type (e.g. bar training)
+* Sign up to be a volunteer
+    - Providing:
+      - email address
+      - over 18 or not
+    - Optionally providing:
+      - other contact details - key/value table for arbitrary contact types
+    - Pick which roles I'm interested in doing
+    - Indicate availability to be contacted to cover shifts
+      - Never
+      - At any time during event
+      - In specified time windows
 
-
-## Availability
-Allow volunteers to indicate that they don't mind the specific role they perform.
-
-* Free shift - The volunteer indicates that they are happy to be assigned any (normal) shift they are trained to do.
-* Cover - the volunteer indicates that they are happy to be contacted to fill required shifts if need be.
-
-As a volunteer I would like to:
--------------------------------
 * View all roles
-* View all shifts and filter by:
+    - Change which I'm interested in doing 
+
+* View all shifts and filter by (schedule view):
     - Role
     - Location
     - Shifts I can do (I have the training and pass the requirements)
     - Time
-    - That I have signed up to
-    - That don't clash with items in the schedule I've starred
+    - That I have signed up to do
+
 * Sign up for:
-    - A specific shift I have been trained for
-    - A training session
-    - A shift I have not been trained for:
-        + ONLY if I can receive training before the shift starts 
-* Indicate availability
-    - For a free shift (whole shifts only?)
-    - For cover (possibly allow partial shifts?)
-* Be notified
-    - About:
-        + My upcoming shifts
-        + Changes to my shift
-        + Shifts that need covering
-        + Details of shift I have been assigned (if I signed up as 'free')
-            * Ideally 15 min before the shift starts
-    - By:
-        + Email
-        + SMS
-        + Notification page on site
-        + Push notification (from web app or native app)
-* Be able to change my notification settings
-* Be able to communicate with managers and/or an admin
-* Provide extra information
-    - Phone number
-    - Age
-    - Misc details (e.g. experience)
+    - A specific shift 
+
+* View list of shifts I'm signed up for 
+* Cancel a shift
+* Take online training/test
+    > Currently expect this to only be for the bar
+
 * When on shift
-    - Log that my replacement has not arrived on time (if unmanaged)
-    - Request help at any time
-    - Have access to information about the role
-* Change a shift
-    - And be alerted if doing so will flag me as a no-show for that shift (i.e. if I try to change a shift within 15 min of its start)
+    - Have access to information about the role (wiki page)
+    - Update information about the role (edit wiki page)
 
+## As a Volunteer Admin I would like to:
 
-As a trainer I would like to:
------------------------------
-* Approve a volunteer as trained for a role
-* Sign up to train a training session (?)
+### Before the event
 
-
-As a manager I would like to:
------------------------------
-* Assign free volunteers to shifts
-* Change who's on a shift (with and without flagging them as a no-show)
-* Edit shift info
-* Mark whether a volunteer attended their shift
-* Respond to questions/concerns of volunteers
-* Ban a volunteer (and record a reason) from
-    - A role
-    - All roles
-* View all volunteers that have signed up for a session
-* Contact:
-    - All volunteers
-    - All volunteers with certain training
-    - All volunteers who have signed up for a free shift
-    - All volunteers who have indicated that they may do cover shifts
-* View which volunteers are currently in which shifts
-* View which current shifts require volunteers
-* View which upcoming shifts require volunteers
-
-As an admin I would like to:
-----------------------------
 * Create roles with
-    - Any requirements (e.g. age)
-    - A list of trainers
-    - Minimum/maximum number of volunteers required per shift
-    - A description
+    - Name
+    - Short description
+    - wiki page with more details/instructions
+    - Any requirements 
+        - Must be over 18
+        - Requires training
+    - If they'll be "unsupervised" during shift or not
+      * Unsupervised means volunteer team are looking after this role
+        rather than another team
+
 * Create venues with
     - A name
     - A location
-    - Any other notes
+
 * Create/Delete/Edit shifts
-    - By:
-        + Importing details (e.g. from frab, json)
-        + Defining parameters
-            * Time of the first shift
-            * Shift duration
-            * Number of shifts
-            * Whether to repeat for all 3 days (e.g. bar will have different opening hours based on day)
-        + Individually
     - With:
         + A role (e.g. 'A/V')
         + A venue (e.g. 'Stage A')
         + Start time
-        + A hand-over period (a shift should probably start 15min before the previous shift is supposed to end to allow proper handover of information and so we have time to find replacements for no-shows)
-        + A description box (to include links on 'how-to' as well as useful numbers etc.)
-* Have the opportunity to preview any changes made to shifts before confirming them.
+        + End time
+        + Minimum number needed
+        + Maximum number needed
+    - By:
+        + Manually entering details
+        + Importing details from 
+            * Main schedule
+              > For any shifts tied to something from the schedule
+            * json file
+              > Will let us have external tools to build lists of shifts
+        + Create multiple shifts by defining parameters
+            * Time of the first shift
+            * Shift duration
+            * Number of shifts
+            * Whether to repeat for all days (e.g. bar could have
+              different opening hours based on day)
+    - Have the opportunity to preview any created shifts or changes
+      made to shifts before confirming them (especially for importing
+      or creating from parameters). - new feature
 
-It would be nice to have:
--------------------------
+### During the event
+
+* Sign a volunteer up (add new volunteer record) - new feature
+* Sign a volunteer up for a shift (either if they have already signed
+  up to volunteer system
+* Remove a volunteer from being signed up for a shift
+* Edit shift info
+* Ban a volunteer (and record a reason) from signing up for shifts
+* View all volunteers that have signed up for a shift
+* Contact:
+    - All volunteers
+    - Volunteers with certain training
+    - Volunteers who have indicated that they may be contacted for
+      cover now
+    - Volunteers signed up to particular shift(s)
+    - Combinations of the above
+* View which volunteers are currently in which shifts
+* View which current shifts require volunteers 
+* View which upcoming shifts require volunteers
+* View which current shifts are "unsupervised"
+
+## As someone being helped by volunteers I would like to:
+
+### Before the event
+* Provide volunteer manager(s) with details of 
+    - Role(s)
+      + Name
+      + Description
+      + Instructions
+      + If you'll be "supervising" volunteers or want that handled by volunteer team
+    - Venue(s)
+      + Name
+      + Location
+    - Shifts
+      + Schedule of what shifts you want
+      + Number of people you want for each shift
+    - Recurring runner tasks
+    
+### During the event
+* Have volunteers turn up for the specified shifts
+* Give those volunteers food tokens when they complete a shift (if you're "supervising" them)
+* Get help from runners for ad-hoc tasks
+
+Other things that could be useful (but can be ignored by anyone who doesn't find them useful):
+* View list of volunteers signed up for a shift
+   - Including:
+     + If they've previously completed a shift for this role.
+     + If they've been marked as arrived yet
+     + Filters for above being true/false or combinations
+* Mark a volunteer as having arrived to work a shift
+* Mark a volunteer as having completed or abandoned a shift (handing 
+out a food token as appropriate)
+
+> Example use case for this is the bar. They have some practical training to give at the start of a volunteers first shift so want a way to track/see who is on their first bar shift for a particular shift to know how many people they need to do training for and to track when they've all arrived.  
+
+## Runner task system
+
+We are going to have a pool of runners to cover smaller tasks don't need someone dedicated to them for the couple of hours of a normal shift. 
+
+> Can manage this on paper if we don't have time to make web version
+
+### Entering tasks 
+
+Will be done by Volunteer Admin - for people wanting a task done: ping details to volunteer desk and they'll put it in the system to get someone to do it):
+
+* Create recurring task with:
+    - Name
+    - Description
+    - Schedule
+        - Start/stop times
+        - Frequency
+    - Number of people needed
+    - Who to contact for more info, if there are any problems etc.
+* Create one off task - as for recurring task but single time rather than schedule.
+* Cancel a task
+    - For recurring tasks want to support cancelling one instance or all future instances
+* Postpone a task 
+
+### Performing tasks (done by runners)
+* View list of tasks to do ordered by time
+* Mark a task as in progress
+* Mark a task as done
+
+## It would be nice to have
 * Schedule integration
+* Alerts
+    - Option for volunteer to get reminder of shift they're signed up for N minutes before it starts
+    - Via email, IRC, push notifications from website
+    - See other contact details (key/value table for arbitrary information)
+* Admin Alerts (to IRC or a webpage we can watch) for:
+    - Volunteer removing signup for a shift within 15(?) minutes of the shift starting
+    - Changes to role instruction wiki pages (watches on pages in Mediawiki, ideally pass to an IRC bot)
+    - If runner task is still TODO N minutes after scheduled time
 * APIs for:
     - Individual's alerts
     - General alerts
     - The data set
+* Dashboard - something to run at volunteer desk to auto update with current status.
